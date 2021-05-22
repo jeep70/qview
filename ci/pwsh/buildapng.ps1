@@ -11,7 +11,7 @@ git checkout $(git tag | select -last 1)
 
 # vcvars on windows
 if ($IsWindows) {
-    pwsh -File $env:BUILD_REPOSITORY_LOCALPATH/ci/pwsh/vcvars.ps1
+    & "$env:BUILD_REPOSITORY_LOCALPATH/ci/pwsh/vcvars.ps1"
 }
 
 qmake "CONFIG += libpng_static"
