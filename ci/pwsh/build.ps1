@@ -6,7 +6,7 @@ param
 )
 
 if ($IsWindows) {
-    $env:BUILD_REPOSITORY_LOCALPATH/ci/pwsh/vcvars.ps1
+    pwsh -File $env:BUILD_REPOSITORY_LOCALPATH/ci/pwsh/vcvars.ps1
 }
 
 qmake $args[0] PREFIX=$Prefix

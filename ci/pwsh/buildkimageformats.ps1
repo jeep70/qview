@@ -10,5 +10,5 @@ git checkout $(git describe --abbrev=0).substring(0, 7)
 
 # vcvars on windows
 if ($IsWindows) {
-    $env:BUILD_REPOSITORY_LOCALPATH/ci/pwsh/vcvars.ps1
+    pwsh -File $env:BUILD_REPOSITORY_LOCALPATH/ci/pwsh/vcvars.ps1
 }
