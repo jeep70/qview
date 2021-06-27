@@ -10,9 +10,11 @@ git checkout $(git describe --abbrev=0).substring(0, 7)
 if ($IsWindows) {
     choco install ninja nasm
 } elseif ($IsMacOS) {
+    brew update
     brew install ninja nasm extra-cmake-modules openexr libheif karchive
 } else {
     sudo apt-get install ninja-build
+    brew update
     brew install nasm extra-cmake-modules openexr libheif karchive
 }
 
