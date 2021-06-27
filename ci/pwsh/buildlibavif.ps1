@@ -10,9 +10,22 @@ if ($IsWindows) {
     & "$env:BUILD_REPOSITORY_LOCALPATH/ci/pwsh/vcvars.ps1"
 }
 
-cd ext
+# Get meson
+python -m pip install meson
+Set-Alias -Name meson -Value python -m meson
+
+# Get ninja
+if ($IsWindows) {
+    choco install ninja
+} elseif ($IsMacOS) {
+    brew install ninja
+} else {
+    sudo apt install ninja
+}
 
 # Build dav1d
+cd ext
+
 if ($IsWindows) {
     
 } else {
