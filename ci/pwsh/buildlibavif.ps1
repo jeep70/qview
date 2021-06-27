@@ -14,13 +14,13 @@ if ($IsWindows) {
 python -m pip install meson
 Set-Alias -Name meson -Value "python -m meson"
 
-# Get ninja
+# Get ninja, nasm
 if ($IsWindows) {
-    choco install ninja
+    choco install ninja nasm
 } elseif ($IsMacOS) {
-    brew install ninja
+    brew install ninja nasm
 } else {
-    sudo apt install ninja
+    sudo apt-get install ninja nasm
 }
 
 # Build dav1d
