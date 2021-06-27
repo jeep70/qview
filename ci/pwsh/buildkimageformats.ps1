@@ -10,24 +10,10 @@ git checkout $(git describe --abbrev=0).substring(0, 7)
 if ($IsWindows) {
     choco install ninja nasm
 } elseif ($IsMacOS) {
-    brew untap kde-mac/kde 2> /dev/null
-    brew tap kde-mac/kde https://invent.kde.org/packaging/homebrew-kde.git --force-auto-update
-    "$(brew --repo kde-mac/kde)/tools/do-caveats.sh"
-
-    brew install kde-mac/kde/kf5-kparts
-
-
-    brew install ninja nasm extra-cmake-modules openexr libheif
+    brew install ninja nasm extra-cmake-modules openexr libheif karchive
 } else {
-    brew untap kde-mac/kde 2> /dev/null
-    brew tap kde-mac/kde https://invent.kde.org/packaging/homebrew-kde.git --force-auto-update
-    "$(brew --repo kde-mac/kde)/tools/do-caveats.sh"
-
-    brew install kde-mac/kde/kf5-kparts
-
-
     sudo apt-get install ninja-build
-    brew install nasm extra-cmake-modules openexr libheif
+    brew install nasm extra-cmake-modules openexr libheif karchive
 }
 
 # Build
