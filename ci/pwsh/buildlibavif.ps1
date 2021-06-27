@@ -18,9 +18,10 @@ Set-Alias -Name meson -Value "python -m meson"
 if ($IsWindows) {
     choco install ninja nasm
 } elseif ($IsMacOS) {
-    brew install ninja nasm
+    brew install ninja nasm extra-cmake-modules
 } else {
-    brew install ninja nasm
+    sudo apt-get install ninja-build
+    brew install nasm extra-cmake-modules
 }
 
 # Build dav1d
