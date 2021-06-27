@@ -14,16 +14,6 @@ if ($IsWindows) {
 python -m pip install meson
 Set-Alias -Name meson -Value "python -m meson"
 
-# Get ninja, nasm
-if ($IsWindows) {
-    choco install ninja nasm
-} elseif ($IsMacOS) {
-    brew install ninja nasm extra-cmake-modules
-} else {
-    sudo apt-get install ninja-build
-    brew install nasm extra-cmake-modules
-}
-
 # Build dav1d
 cd ext
 
