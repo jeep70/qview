@@ -12,7 +12,7 @@ if ($IsWindows) {
 
 # Get meson
 python -m pip install meson
-Set-Alias -Name meson -Value python -m meson
+Set-Alias -Name meson -Value "python -m meson"
 
 # Get ninja
 if ($IsWindows) {
