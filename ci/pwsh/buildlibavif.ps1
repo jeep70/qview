@@ -20,7 +20,7 @@ if ($IsWindows) {
 } elseif ($IsMacOS) {
     brew install ninja nasm
 } else {
-    sudo apt-get install ninja nasm
+    sudo apt-get install ninja-build nasm
 }
 
 # Build dav1d
