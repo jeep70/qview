@@ -41,3 +41,5 @@ cmake -G Ninja -DCMAKE_BUILD_TYPE=Release -DAVIF_CODEC_DAV1D=ON -DAVIF_LOCAL_DAV
 ninja
 $env:DESTDIR = "installed/"
 ninja install
+
+cd ../../
